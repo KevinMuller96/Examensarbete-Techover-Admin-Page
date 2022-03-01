@@ -4,13 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB4VwkchdiX15kCjxL3Ybcjoi7pHWdchWg",
-  authDomain: "techover-dashboard-fe8f1.firebaseapp.com",
-  projectId: "techover-dashboard-fe8f1",
-  storageBucket: "techover-dashboard-fe8f1.appspot.com",
-  messagingSenderId: "20954471930",
-  appId: "1:20954471930:web:f89de072d94303f459d843",
-  measurementId: "G-HMJGBF4ZWR",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 const app =
