@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./applicationList.css";
 import { fs } from "../../Firebase";
+import { Link } from "react-router-dom";
 import {
   getDocs,
   collection,
@@ -75,7 +76,11 @@ export default function ApplicationList() {
       renderCell: (params) => {
         return (
           <>
-            <button className="applicationListShowMore">See Application</button>
+            <Link to={"/applications/" + params.row.id}>
+              <button className="applicationListShowMore">
+                See Application
+              </button>
+            </Link>
           </>
         );
       },
