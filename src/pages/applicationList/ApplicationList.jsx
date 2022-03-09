@@ -21,11 +21,10 @@ export default function ApplicationList() {
         docs.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
-          date: Date.now(doc.date),
+          date: new Date((doc.data()).date.seconds * 1000)
         }))
-      );
+        );
     });
-
     return unsub;
   }, []);
 
@@ -87,6 +86,10 @@ export default function ApplicationList() {
       width: 500,
     },
   ];
+
+  useEffect(() => {
+    console.log(applications)
+  }, [applications])
 
   return (
     <div className="applicationList">
