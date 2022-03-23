@@ -22,10 +22,11 @@ export default function ApplicationList() {
         docs.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
-          date: new Date((doc.data()).date.seconds * 1000)
+          date: new Date(doc.data().date.seconds * 1000),
         }))
-        );
+      );
     });
+
     return unsub;
   }, []);
 
@@ -76,7 +77,7 @@ export default function ApplicationList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/applications/" + params.row.id}>
+            <Link to={"/applicants/" + params.row.id}>
               <button className="applicationListShowMore">
                 See Application
               </button>
@@ -93,8 +94,10 @@ export default function ApplicationList() {
   ];
 
   useEffect(() => {
-    console.log(applications)
-  }, [applications])
+    console.log(applications);
+    let nonting = applications.length;
+    console.log("Antal appliocationer: ", nonting);
+  }, [applications]);
 
   return (
     <div className="applicationList">

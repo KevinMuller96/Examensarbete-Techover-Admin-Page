@@ -19,7 +19,7 @@ function App() {
 
           <Route path="/applications" element={<ApplicationList />} />
 
-          <Route path="/applicants" element={<Applicants />} />
+          <Route path="/applicants/:id" element={<Applicants />} />
 
           <Route path="/submitForm" element={<Form />} />
         </Routes>
