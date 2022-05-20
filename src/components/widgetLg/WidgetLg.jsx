@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react";
 import "./widgetLg.css";
+import { fs } from "../../Firebase";
 
-export default function WidgetLg() {
+export default function WidgetLg({ applications }) {
   const Button = ({ type }) => {
     return <button className={"widgetLgButton " + type}>{type}</button>;
   };
+
   return (
     <div className="widgetLg">
       <h3 className="widgetLgTitle">During recruitment </h3>
@@ -16,7 +18,6 @@ export default function WidgetLg() {
         </tr>
         <tr className="widgetLgTr">
           <td className="widgetLgUser">
-
             <span className="widgetLgName">Elev 1</span>
           </td>
           <td className="widgetLgDate">Datum</td>
@@ -26,7 +27,6 @@ export default function WidgetLg() {
         </tr>
         <tr className="widgetLgTr">
           <td className="widgetLgUser">
-
             <span className="widgetLgName">Elev 2</span>
           </td>
           <td className="widgetLgDate">Datum</td>
@@ -36,7 +36,6 @@ export default function WidgetLg() {
         </tr>
         <tr className="widgetLgTr">
           <td className="widgetLgUser">
-
             <span className="widgetLgName">Elev 3</span>
           </td>
           <td className="widgetLgDate">Datum</td>
@@ -46,7 +45,6 @@ export default function WidgetLg() {
         </tr>
         <tr className="widgetLgTr">
           <td className="widgetLgUser">
-
             <span className="widgetLgName">Elev 4</span>
           </td>
           <td className="widgetLgDate">Datum</td>

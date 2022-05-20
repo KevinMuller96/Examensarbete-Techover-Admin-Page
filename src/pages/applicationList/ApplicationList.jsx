@@ -10,32 +10,11 @@ import {
   Timestamp,
 } from "firebase/firestore";
 import { DataGrid } from "@mui/x-data-grid";
-import { firedumAdd } from "firedum";
-import { AllOut } from "@material-ui/icons";
-import { Expand } from "@material-ui/icons";
 
-export default function ApplicationList() {
-  const [applications, setApplications] = useState([]);
+export default function ApplicationList({ applications }) {
   useEffect(() => {
-    const unsub = onSnapshot(collection(fs, "Applications"), (docs) => {
-      setApplications(
-        docs.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-          date: new Date(doc.data().date.seconds * 1000),
-        }))
-      );
-    });
-
-    return unsub;
-  }, []);
-
-  // useEffect(() => {
-  //   getDocs(collection(fs, "Applications")).then((docs) =>
-  //     setApplications(docs.map((doc) => doc.data()))
-  //   );
-  // }, []);
-  // console.log(applications);
+    console.log("Applications:", applications);
+  }, [applications]);
 
   const columns = [
     {
@@ -45,7 +24,7 @@ export default function ApplicationList() {
       description: "ID from database",
     },
     {
-      field: "fullName",
+      field: "name",
       headerName: "Name",
       width: 150,
       description: "The applicant's full name",
@@ -57,7 +36,7 @@ export default function ApplicationList() {
       width: 50,
     },
     {
-      field: "mail",
+      field: "email",
       headerName: "Mail",
       description: "This column has a value getter and is not sortable.",
       sortable: false,
@@ -93,11 +72,11 @@ export default function ApplicationList() {
     },
   ];
 
-  useEffect(() => {
-    console.log(applications);
-    let nonting = applications.length;
-    console.log("Antal appliocationer: ", nonting);
-  }, [applications]);
+  // useEffect(() => {
+  //   console.log(applications);
+  //   let nonting = applications.length;
+  //   console.log("Antal appliocationer: ", nonting);
+  // }, [applications]);
 
   return (
     <div className="applicationList">
